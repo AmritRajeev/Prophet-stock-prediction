@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from fbprophet import prophet
+import prophet
 
 
 df = pd.read_csv('dataset.csv')
