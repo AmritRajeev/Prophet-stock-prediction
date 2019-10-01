@@ -5,13 +5,13 @@ from fbprophet import prophet
 
 
 df = pd.read_csv('dataset.csv')
-df =df[['Date','High']].dropna()
-df['Date'] = pd.to_datetime(df['Date'])
-df = df.set_index('Date')
+df =df[['date','High']].dropna()
+df['date'] = pd.to_datetime(df['date'])
+df = df.set_index('date')
 week_df = df.resample('W').mean()
 w_df = week_df.reset_index().dropna()
-df['Date'] = pd.to_datetime(df['Date'])
-df = df.set_index('Date')
+df['date'] = pd.to_datetime(df['date'])
+df = df.set_index('date')
 week_df = df.open.resample('W').mean()
 d_df = daily_df.reset_index().dropna()
 d_df.columns = ['date', 'High']
