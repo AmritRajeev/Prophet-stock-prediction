@@ -5,7 +5,7 @@ from fbprophet import prophet
 
 
 df = pd.read_csv('dataset.csv')
-df =df[['Date','AveragePrice']].dropna()
+df =df[['Date','High']].dropna()
 df['Date'] = pd.to_datetime(df['Date'])
 df = df.set_index('Date')
 week_df = df.resample('W').mean()
